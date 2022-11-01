@@ -1,0 +1,101 @@
+:root {
+    --azul__cabecalho: #06054E
+}
+
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background-color: #000000;
+}
+
+.header {
+    width: 100%;
+    background-color: var(--azul__cabecalho);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho__botoes {
+    padding: 0 4em;
+}
+
+.cabecalho__botoes a {
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #0BC4E2;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.banner {
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
+    margin-top: 10px;
+    justify-content: center;
+    /* background-image: url("../img/udyr.banner.svg"); */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bannergif{
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+
+}
+
+.bannergif img{
+    border-radius: 10px;
+}
+
+
+.banner__formulario {
+    text-align: center;
+    width: 20%;
+    color: #FFFFFF;
+    border: #B4AEAE solid 1px;
+    border-radius: 10px;
+    padding: 0.5em 0;
+    height: 215px;
+    padding: 0em 5em;
+    margin-right: 10px;
+}
+
+.banner__formulario p {
+    color: #D2CCCC;
+}
+
+.banner__formulario a {
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #52A0B9;
+    font-size: 20px;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.sobre {
+    background-color: #001637;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+    height: 200px;
+    padding: 0 2em;
+    border: #B4AEAE solid 1px;
+    border-radius: 10px;
+}
+
+.sobre h2 {
+    color: #FFFFFF;
+    font-size: 40px;
+}
+
+.sobre p{
+    color:#D2CCCC;
+}
