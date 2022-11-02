@@ -1,13 +1,21 @@
 :root {
     --azul__cabecalho: #06054E
+    
+}
+body {
+    margin: 0;
 }
 
-body {
+.index {
     margin: 0;
     font-family: 'Lato', sans-serif;
     background-color: #000000;
     /* background-image: url("../img/23257.jpg"); */
     background-repeat: no-repeat;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .header {
@@ -56,14 +64,17 @@ body {
 
 
 .banner__formulario {
-    background-color: #001637;
     text-align: center;
-    width: 19.9%;
+    display: flex;
+    background-color: #001637;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 20%;
     color: #FFFFFF;
     border: #B4AEAE solid 1px;
     border-radius: 10px;
     padding: 0.5em 0;
-    height: 215px;
     padding: 0em 5em;
     margin-right: 10px;
 }
@@ -80,6 +91,7 @@ body {
     color: #FFFFFF;
     text-decoration: none;
     text-transform: uppercase;
+    margin-bottom: 5px;
 }
 
 .sobre {
@@ -89,16 +101,65 @@ body {
     margin: auto;
     margin-top: 10px;
     height: 200px;
-    padding: 0 2em;
     border: #B4AEAE solid 1px;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .sobre h2 {
     color: #FFFFFF;
     font-size: 40px;
+    text-transform: uppercase;
 }
 
 .sobre p{
     color:#D2CCCC;
+}
+.sobre a {
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #0BC4E2;
+    font-size: 24px;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.mapa {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 95.7%;
+    border-radius: 10px;
+    border-bottom: 5px solid #FFFFFF;
+}
+.mapa__texto {
+    /* border: #B4AEAE solid 1px; */
+    border-radius: 10px;
+    text-align: center;
+    width: 62%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 2em;
+}
+.mapa__texto h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+.mapa__texto p {
+    color: #D2CCCC;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.footer {
+    background-color: #111111;
+    height: 128px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    color: #7E7E7E;
 }

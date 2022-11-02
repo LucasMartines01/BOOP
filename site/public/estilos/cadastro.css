@@ -1,0 +1,111 @@
+.cadastro {
+  width: 100%;
+  background-image: url("../img/pyke.webp");
+  background-repeat: no-repeat;
+  font-family: 'Lato', sans-serif;
+}
+
+.formulario__cadastro {
+  background-color: #FFFFFF;
+  width: 600px;
+  margin: auto;
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.formulario__cadastro h2 {
+  font-size: 48px;
+  text-transform: uppercase;
+}
+
+.inputs__cadastro {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inputs__cadastro span {
+  font-size: 32px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.item__cadastro {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 0;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+.item__cadastro input {
+  padding: 1.5em 9em;
+  background-color: #D9D9D9;
+  border: none;
+  border-radius: 10px;
+}
+
+.item__cadastro input:focus {
+  outline: none;
+  border: 2px solid #1a83e8;
+}
+
+input::placeholder {
+  color: #353535;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+}
+
+.formulario__cadastro button {
+  font-family: 'Lato', sans-serif;
+  padding: 10px 200px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-transform: uppercase;
+  background-color: #52A0B9;
+  border: none;
+  border-radius: 10px;
+}
+
+/* web data-viz */
+.alerta_erro {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card_erro {
+  display: none;
+  background-color: #fff;
+  color: black;
+  width: 230px;
+  position: fixed;
+  border-radius: 4px;
+  border: #1a83e8 3px solid;
+  padding: 10px;
+  margin-right: 10%;
+}
+
+.card_erro #mensagem_erro {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.loading-div {
+  width: 50px;
+  margin: auto;
+  display: none;
+}
+
+.loading-div img {
+  height: 50px;
+  width: 50px;
+}
+
+.formulario__cadastro #div_erros_login {
+  margin-top: 15px;
+}
