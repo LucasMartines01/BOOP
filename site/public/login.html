@@ -17,9 +17,9 @@
 <body>
     <div class="cadastro">
         <div class="header">
-            <img src="img/Blue and White Illustrated Gaming Logo 1.svg" alt="Logo da Dirken" width="10%">
+           <a href="index.html"><img src="img/Blue and White Illustrated Gaming Logo 1.svg" alt="Logo da Dirken" width="79%"></a>
             <div class="cabecalho__botoes">
-                <a href="#">Cadastrar</a>
+                <a href="cadastro.html">Cadastrar</a>
                 <a href="#">Iniciar sessão</a>
             </div>
         </div>
@@ -75,12 +75,25 @@
         var emailVar = ipt_email.value;
         var senhaVar = ipt_senha.value;
 
-        if (emailVar == "" || senhaVar == "") {
+        if (emailVar == "") {
+            ipt_email.style.border = "1px solid red"
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            mensagem_erro.innerHTML = "Preencha os campos corretamente!";
+
             finalizarAguardar();
             return false;
+
         }
+        if (senhaVar == "") {
+            ipt_senha.style.border = "1px solid red"
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Preencha os campos corretamente!";
+
+            finalizarAguardar();
+            return false;
+
+        }
+
         else {
             setInterval(sumirMensagem, 5000)
         }
