@@ -36,28 +36,28 @@
 
                 <div class="item__cadastro">
                     <span>Usuário</span>
-                    <input type="text" id="ipt_usuario" placeholder="Nome de usuário">
+                    <input type="text" id="ipt_usuario" placeholder="Nome de usuário" required>
                 </div>
 
                 <div class="item__cadastro">
                     <span>E-mail</span>
-                    <input type="email" id="ipt_email" placeholder="dirken@exemplo.com">
+                    <input type="email" id="ipt_email" placeholder="dirken@exemplo.com" required>
                 </div>
 
                 <div class="item__cadastro">
                     <span>Senha</span>
-                    <input type="password" id="ipt_senha" placeholder="******">
+                    <input type="password" id="ipt_senha" placeholder="******" required>
                 </div>
                 <div class="item__cadastro">
                     <span>Confirmação</span>
-                    <input type="password" id="ipt_confirmacao" placeholder="******">
+                    <input type="password" id="ipt_confirmacao" placeholder="******" required>
                 </div>
             </div>
 
             <button onclick="cadastrar()">Cadastrar</button>
 
             <div id="div_aguardar" class="loading-div">
-                <img src="./assets/circle-loading.gif" id="loading-gif">
+                <img src="img/circle-loading.gif" id="loading-gif">
             </div>
 
             <div id="div_erros_login">
@@ -70,12 +70,12 @@
         </div>
     </div>
 </body>
+
 </html>
 
 <script>
     function cadastrar() {
         aguardar();
-
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var nomeVar = ipt_usuario.value;
@@ -83,9 +83,26 @@
         var senhaVar = ipt_senha.value;
         var confirmacaoSenhaVar = ipt_confirmacao.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        if (nomeVar == "") {
+            ipt_usuario.style.border = "1px solid red"
+
+        }
+        if (emailVar == "") {
+            ipt_email.style.border = "1px solid red"
+
+        }
+        if (senhaVar == "") {
+            ipt_senha.style.border = "1px solid red"
+
+        }
+        if (confirmacaoSenhaVar == "" || confirmacaoSenhaVar != senhaVar) {
+            ipt_confirmacao.style.border = "1px solid red"
+
+        }
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || confirmacaoSenhaVar != senhaVar) {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Preencha os campos corretamente!)";
+            mensagem_erro.innerHTML = "Preencha os campos corretamente!";
 
             finalizarAguardar();
             return false;
@@ -119,7 +136,7 @@
                 setTimeout(() => {
                     window.location = "login.html";
                 }, "2000")
-                
+
                 limparFormulario();
                 finalizarAguardar();
             } else {

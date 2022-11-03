@@ -70,6 +70,7 @@ input::placeholder {
   background-color: #52A0B9;
   border: none;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 /* web data-viz */
