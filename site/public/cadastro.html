@@ -20,7 +20,7 @@
             <img src="img/Blue and White Illustrated Gaming Logo 1.svg" alt="Logo da Dirken" width="10%">
             <div class="cabecalho__botoes">
                 <a href="#">Cadastrar</a>
-                <a href="#">Iniciar sessão</a>
+                <a href="login.html">Iniciar sessão</a>
             </div>
         </div>
 
@@ -85,28 +85,41 @@
 
         if (nomeVar == "") {
             ipt_usuario.style.border = "1px solid red"
-
-        }
-        if (emailVar == "") {
-            ipt_email.style.border = "1px solid red"
-
-        }
-        if (senhaVar == "") {
-            ipt_senha.style.border = "1px solid red"
-
-        }
-        if (confirmacaoSenhaVar == "" || confirmacaoSenhaVar != senhaVar) {
-            ipt_confirmacao.style.border = "1px solid red"
-
-        }
-
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || confirmacaoSenhaVar != senhaVar) {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "Preencha os campos corretamente!";
 
             finalizarAguardar();
             return false;
+
         }
+        if (emailVar == "") {
+            ipt_email.style.border = "1px solid red"
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Preencha os campos corretamente!";
+
+            finalizarAguardar();
+            return false;
+
+        }
+        if (senhaVar == "") {
+            ipt_senha.style.border = "1px solid red"
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Preencha os campos corretamente!";
+
+            finalizarAguardar();
+            return false;
+
+        }
+        if (confirmacaoSenhaVar == "" || confirmacaoSenhaVar != senhaVar) {
+            ipt_confirmacao.style.border = "1px solid red"
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Preencha os campos corretamente!";
+
+            finalizarAguardar();
+            return false;
+
+        }
+
         else {
             setInterval(sumirMensagem, 5000)
         }

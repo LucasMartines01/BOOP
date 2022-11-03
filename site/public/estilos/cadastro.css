@@ -3,13 +3,14 @@
   background-image: url("../img/pyke.webp");
   background-repeat: no-repeat;
   font-family: 'Lato', sans-serif;
+  height: 100%;
 }
 
 .formulario__cadastro {
   background-color: #FFFFFF;
   width: 600px;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 5vh;
   text-align: center;
   border-radius: 20px;
 }
