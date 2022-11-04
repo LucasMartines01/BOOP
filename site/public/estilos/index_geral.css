@@ -28,6 +28,7 @@ body {
 
 .menu__lateral h3 {
     font-size: 25px;
+    text-transform: uppercase;
 }
 
 .menu__lateral--botoes {
