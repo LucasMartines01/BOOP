@@ -1,9 +1,10 @@
 body {
     margin: 0;
 }
+
 .geral {
     display: grid;
-    grid-template-columns: 28% 60%;
+    grid-template-columns: 28% 72%;
     font-family: 'Lato', sans-serif;
     color: #FFFFFF;
 }
@@ -14,14 +15,19 @@ body {
     height: 100vh;
     flex-direction: column;
     align-items: center;
-    
+
 }
+.ola {
+    display: flex;
+    align-items: center;
+}
+
 .menu__lateral h1 {
     font-size: 55px;
     text-transform: uppercase;
     background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
     background-clip: text;
-    -webkit-background-clip: text; 
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: black;
 }
@@ -38,10 +44,10 @@ body {
     height: 10vw;
     display: flex;
     flex-direction: column;
-    align-items: center ;
+    align-items: center;
 }
 
- a{
+a {
     border-radius: 10px;
     margin: 1em 0;
     border-bottom: 3px solid #FFFFFF;
@@ -75,3 +81,64 @@ a:hover {
 .menu__lateral--deslogar:hover {
     transform: scale(1.05);
 }
+
+.conteudo__principal {
+    height: 100vh;
+    background-color: #0f1519;
+    /* background-color: #000; */
+}
+
+
+.noticia__principal {
+    width: 100%;
+    background-image: url('../img/HERO_WORLDS_FINAL_2.jpg');
+    background-position: center;
+    margin: 0;
+    height: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.noticia__principal h1 {
+    margin: 0;
+}
+
+.noticia_principal--texto {
+    width: 70%;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.noticia_principal--button {
+    font-size: 20px;
+    background-color: #00c8c8;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    height: 2em;
+    width: 10em;
+    border-radius: 100px;
+    font-family: 'Lato', sans-serif;
+}
+
+
+.card__artigo {
+    font-size: 15px;
+    color:#8fa3b0;
+    text-transform: uppercase;
+}
+
+
+.card_noticia--imagem {
+    width: 70%;
+    height: 70%;
+}
+
+.swiper {
+    width: 90%;
+    height: 59%;
+    text-align: center;
+  }
