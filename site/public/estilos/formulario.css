@@ -26,6 +26,13 @@
     border-radius: 100px;
     box-sizing: border-box;
 }
+.formulario__texto{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
 
 .formulario h2 {
     text-transform: uppercase;
