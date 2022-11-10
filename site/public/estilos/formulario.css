@@ -3,11 +3,11 @@
     grid-template-columns: 28% 72%;
     font-family: 'Lato', sans-serif;
     color: #FFFFFF;
-    height: 100vh
+    height: 100%;
 }
 
 .conteudo__formulario {
-    height: 100vh;
+    height: 100%;
     /* background-color: #0f1519; */
     display: flex;
     background-image: url('../img/pyke.webp');
@@ -19,11 +19,12 @@
     background-color: #FFFFFF;
     color: #000000;
     display: flex;
-    height: 70%;
+    height: 90%;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     border-radius: 100px;
+    box-sizing: border-box;
 }
 
 .formulario h2 {

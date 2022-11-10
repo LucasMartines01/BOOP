@@ -13,7 +13,7 @@ body {
 .menu__lateral {
     background-color: #000000;
     display: flex;
-    height: 100%;
+    height: 700px;
     flex-direction: column;
     align-items: center;
 
@@ -84,7 +84,7 @@ a:hover {
 }
 
 .conteudo__principal {
-    height: 100vh;
+    height: 700px;
     background-color: #0f1519;
     /* background-color: #000; */
 }
