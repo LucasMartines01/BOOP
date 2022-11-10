@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOP | Formulário</title>
+    <link rel="stylesheet" href="estilos/index_geral.css">
+    <link rel="stylesheet" href="estilos/formulario.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="../js/funcoes.js"></script>
+</head>
+
+<body>
+    <div class="geral__form">
+        <div class="menu__lateral">
+            <h1>BOOP</h1>
+            <div class="ola">
+                <img src="img/loginuser.png" alt="" width="50px" height="50px">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+            <div class="menu__lateral--botoes">
+                <a href="#">Noticias</a>
+                <a href="#" class="aqui">Formulário</a>
+                <a href="#">Quiz</a>
+                <button class="menu__lateral--deslogar" onclick="limparSessao()">Sair</button>
+            </div>
+        </div>
+
+        <div class="conteudo__formulario">
+            <div class="formulario">
+                <h2>Formulario</h2>
+                <p>Como acredita que se encaixaria melhor:</p>
+                <select id="estilo--jogo" class="select__form">
+                    <option value="">--Selecione uma opção--</option>
+                    <option value="">Causando dano</option>
+                    <option value="">Tankando</option>
+                    <option value="">Dando suporte ao time</option>
+                </select>
+                <p>Em uma luta qual seria sua atitude:</p>
+                <select id="" class="select__form">
+                    <option value="">--Selecione uma opção--</option>
+                    <option value="">Buscando explodir um alvo especifico</option>
+                    <option value="">Matendo o posicionamento e causando dano</option>
+                    <option value="">Fazendo a linha de frente e segurando o dano</option>
+                    <option value="">Buffando os parceiros do time</option>
+                    <option value="">Jogando nas rotas laterais levando objetivos</option>
+                    <option value="">Matando monstros e fazendo objetivos neutros</option>
+                </select>
+                <p>Durante os primeiros minutos de game você seria o player que:</p>
+                <select id="" class="select__form">
+                    <option value="">--Selecione uma opção--</option>
+                    <option value="">Jogaria agressivo pra cima do adversário</option>
+                    <option value="">Jogaria passivo pretende jogar com calma</option>
+                    <option value="">Pensaria o game para barrar o inimigo</option>
+                </select>
+                <button class="formulario__button" onclick="responder()">Responder</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

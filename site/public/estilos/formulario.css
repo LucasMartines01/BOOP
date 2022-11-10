@@ -1,0 +1,62 @@
+.geral__form {
+    display: grid;
+    grid-template-columns: 28% 72%;
+    font-family: 'Lato', sans-serif;
+    color: #FFFFFF;
+    height: 100vh
+}
+
+.conteudo__formulario {
+    height: 100vh;
+    /* background-color: #0f1519; */
+    display: flex;
+    background-image: url('../img/pyke.webp');
+}
+
+.formulario {
+    width: 70%;
+    margin: auto;
+    background-color: #FFFFFF;
+    color: #000000;
+    display: flex;
+    height: 70%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 100px;
+}
+
+.formulario h2 {
+    text-transform: uppercase;
+    font-size: 40px;
+}
+
+.formulario p {
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+.select__form {
+    padding: 10px 40px;
+    border: #000000 solid 2px;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+}
+
+.formulario__button {
+    padding: 10px 20%;
+    margin-top: 3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #00c8c8;
+    border-radius: 100px;
+    border: #000000 solid 2px;
+}
+
+.formulario__button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
