@@ -68,3 +68,13 @@
     transform: scale(1.05);
     cursor: pointer;
 }
+
+.card__personagem {
+    width: 600px;
+    margin: auto;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    height: 500px;
+    display: none;
+}

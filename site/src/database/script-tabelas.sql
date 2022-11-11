@@ -1,7 +1,7 @@
 
-CREATE DATABASE dirken;
+CREATE DATABASE boop;
 
-USE dirken;
+USE boop;
 
 CREATE TABLE usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
