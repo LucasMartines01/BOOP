@@ -3,23 +3,24 @@
     grid-template-columns: 28% 72%;
     font-family: 'Lato', sans-serif;
     color: #FFFFFF;
-    height: 100%;
+    height: 120vh;
 }
 
 .conteudo__formulario {
     height: 100%;
-    /* background-color: #0f1519; */
+    background-color: #0f1519;
     display: flex;
-    background-image: url('../img/pyke.webp');
+    /* background-image: url('../img/pyke.webp'); */
+    background-repeat: no-repeat;
 }
 
 .formulario {
     width: 70%;
-    margin: auto;
+    margin: 2em auto;
     background-color: #FFFFFF;
     color: #000000;
     display: flex;
-    height: 90%;
+    height: 700px;
     align-items: center;
     flex-direction: column;
     justify-content: center;
@@ -70,11 +71,52 @@
 }
 
 .card__personagem {
-    width: 600px;
-    margin: auto;
     background-color: #000000;
-    color: #ffffff;
-    display: flex;
-    height: 500px;
+    margin: 2em auto;
+    border-radius: 10px;
+    height: 600px;
+    border: #00c8c8 solid 3px;
     display: none;
+}
+
+.card__imagem {
+    width: 700px;
+    border-radius: 10px;
+    margin: 0;
+}
+
+.nome__campeao {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 30px;
+    text-align: center;
+}
+
+.card__lane {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.card__lane p {
+    font-size: 25px;
+    margin-right: 10px;
+}
+.icon__lane {
+    width: 50px;
+    height: 50px;
+}
+
+.personagem__voltar {
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #00c8c8;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+}
+
+.erro__resposta {
+    display: none;
+    color: red;
+    font-weight: bold;
 }

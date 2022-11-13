@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="../js/funcoes.js"></script>
+    <!-- <script src="js/form.js"></script> -->
 </head>
 
 <body>
@@ -33,41 +34,42 @@
         </div>
 
         <div class="conteudo__formulario">
-                <div class="formulario">
-                    <div class="formulario__texto">
-                        <h2>Formulario</h2>
-                        <p>Como acredita que se encaixaria melhor:</p>
-                        <select id="sel_estilo" class="select__form">
-                            <option value="">--Selecione uma opção--</option>
-                            <option value="">Causando dano</option>
-                            <option value="">Tankando</option>
-                            <option value="">Dando suporte ao time</option>
-                        </select>
-                        <p>Em uma luta qual seria sua atitude:</p>
-                        <select id="sel_lane" class="select__form">
-                            <option value="">--Selecione uma opção--</option>
-                            <option value="">Buscando explodir um alvo especifico</option>
-                            <option value="">Matendo o posicionamento e causando dano</option>
-                            <option value="">Fazendo a linha de frente e segurando o dano</option>
-                            <option value="">Buffando os parceiros do time</option>
-                            <option value="">Jogando nas rotas laterais levando objetivos</option>
-                            <option value="">Matando monstros e fazendo objetivos neutros</option>
-                        </select>
-                        <p>Durante os primeiros minutos de game você seria o player que:</p>
-                        <select id="sel_campeao" class="select__form">
-                            <option value="">--Selecione uma opção--</option>
-                            <option value="">Jogaria agressivo pra cima do adversário</option>
-                            <option value="">Jogaria passivo pretende jogar com calma</option>
-                            <option value="">Pensaria o game para barrar o inimigo</option>
-                        </select>
-                        <button class="formulario__button" onclick="responder()">Responder</button>
-                    </div>
-                <div class="card__personagem">
-                    <img src="" id="imagem__campeao">
-                    <div class="lane">
-                        <p id="nome__lane"></p>
-                        <img src="" id="imagem__lane">
-                    </div>
+            <div class="formulario" id="formulario__conteudo">
+                <div class="formulario__texto">
+                    <h2>Formulário</h2>
+                    <p>Como acredita que se encaixaria melhor:</p>
+                    <select id="sel_estilo" class="select__form">
+                        <option value="0">--Selecione uma opção--</option>
+                        <option value="dano">Causando dano</option>
+                        <option value="tank">Tankando</option>
+                        <option value="suporte">Dando suporte ao time</option>
+                    </select>
+                    <p>Em uma luta qual seria sua atitude:</p>
+                    <select id="sel_lane" class="select__form">
+                        <option value="">--Selecione uma opção--</option>
+                        <option value="assassino">Buscando explodir um alvo especifico</option>
+                        <option value="adc">Matendo o posicionamento e causando dano</option>
+                        <option value="frontline">Fazendo a linha de frente e segurando o dano</option>
+                        <option value="buffer">Buffando os parceiros do time</option>
+                        <option value="split">Jogando nas rotas laterais levando objetivos</option>
+                        <option value="jungle">Matando monstros e fazendo objetivos neutros</option>
+                    </select>
+                    <p>Durante os primeiros minutos de game você seria o player que:</p>
+                    <select id="sel_campeao" class="select__form">
+                        <option value="">--Selecione uma opção--</option>
+                        <option value="agressivo">Jogaria agressivo pra cima do adversário</option>
+                        <option value="passivo">Jogaria passivo pretende jogar com calma</option>
+                    </select>
+                    <div class="erro__resposta" id="erro_selecao">Selecione as opções de maneira coerente!</div>
+                    <button class="formulario__button" onclick="responder()">Responder</button>
+                </div>
+            </div>
+            <div class="card__personagem" id="personagem__conteudo">
+                <img src="" alt="" class="card__imagem" id="imagem__personagem">
+                <h2 class="nome__campeao" id="campeao__nome"></h2>
+                <div class="card__lane">
+                    <p id="campeao__lane"></p>
+                    <img src="" alt="icone lane" class="icon__lane" id="lane__icone">
                 </div>
             </div>
         </div>
@@ -75,3 +77,102 @@
 </body>
 
 </html>
+<script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    function responder() {
+        var estilo = sel_estilo.value
+        var lane = sel_lane.value
+        var campeao = sel_campeao.value
+        var champion = ''
+        var rota = ''
+        if (estilo == 'dano' && lane == 'assassino' && campeao == 'agressivo') {
+            formulario__conteudo.style.display = 'none'
+            personagem__conteudo.style.display = 'block'
+            imagem__personagem.src = 'img/RiotX_ChampionList_zed.jpg'
+            campeao__nome.innerHTML = `ZED: LÂMINA DO TROVÃO`
+            campeao__lane.innerHTML = `MID`
+            lane__icone.src = 'img/Middle_icon.webp'
+            champion = 'zed'
+            rota = 'mid'
+        }
+
+        else if (estilo == 'dano' && lane == 'assassino' && campeao == 'passivo') {
+            formulario__conteudo.style.display = 'none'
+            personagem__conteudo.style.display = 'block'
+            imagem__personagem.src = 'img/Leblanc_19.jpg'
+            campeao__nome.innerHTML = `LEBLANC: A FARSANTE`
+            campeao__lane.innerHTML = `MID`
+            lane__icone.src = 'img/Middle_icon.webp'
+            champion = 'leblanc'
+            rota = 'mid'
+        }
+
+        else if (estilo == 'dano' && lane == 'adc' && campeao == 'passivo' || estilo == 'dano' && lane == 'adc' && campeao == 'agressivo') {
+            formulario__conteudo.style.display = 'none'
+            personagem__conteudo.style.display = 'block'
+            imagem__personagem.src = 'img/Ezreal_25.jpg'
+            campeao__nome.innerHTML = `EZREAL: O EXPLORADOR PRÓDIGO`
+            campeao__lane.innerHTML = `ADC`
+            lane__icone.src = 'img/Bottom_icon.webp'
+            champion = 'ezreal'
+            rota = 'adc'
+        }
+        else if (estilo == 'dano' && lane == 'split' && campeao == 'passivo' || estilo == 'dano' && lane == 'split' && campeao == 'agressivo') {
+            formulario__conteudo.style.display = 'none'
+            personagem__conteudo.style.display = 'block'
+            imagem__personagem.src = 'img/Jax_1.jpg'
+            campeao__nome.innerHTML = `JAX: O GRÃO-MESTRE DAS ARMAS`
+            campeao__lane.innerHTML = `TOP`
+            lane__icone.src = 'img/Top_icon.png'
+            champion = 'jax'
+            rota = 'top'
+        }
+        else if (estilo == 'dano' && lane == 'jungle' && campeao == 'passivo' || estilo == 'dano' && lane == 'jungle' && campeao == 'agressivo') {
+            formulario__conteudo.style.display = 'none'
+            personagem__conteudo.style.display = 'block'
+            imagem__personagem.src = 'img/LeeSin_31.jpg'
+            campeao__nome.innerHTML = `LEE SIN: O MONGE CEGO`
+            campeao__lane.innerHTML = `JUNGLE`
+            lane__icone.src = 'img/icon-position-jungle.png'
+            champion = 'lee sin'
+            lane = 'jungle'
+        }
+        else if (estilo == 'tank' && lane == 'frontline' && campeao == 'passivo' || estilo == 'tank' && lane == 'frontline' && campeao == 'agressivo') {
+            formulario__conteudo.style.display = 'none'
+            personagem__conteudo.style.display = 'block'
+            imagem__personagem.src = 'img/sion.jpg'
+            campeao__nome.innerHTML = `SION: COLOSSO MORTO-VIVO`
+            campeao__lane.innerHTML = `TOP`
+            lane__icone.src = 'img/Top_icon.png'
+            champion = 'sion'
+            rota = 'top'
+        }
+        else if (estilo == 'tank' && lane == 'jungle' && campeao == 'passivo' || estilo == 'tank' && lane == 'jungle' && campeao == 'agressivo') {
+            formulario__conteudo.style.display = 'none'
+            personagem__conteudo.style.display = 'block'
+            imagem__personagem.src = 'img/Sejuani_0.jpg'
+            campeao__nome.innerHTML = `SEJUANI: A FÚRIA DO NORTE`
+            campeao__lane.innerHTML = `JUNGLE`
+            lane__icone.src = 'img/icon-position-jungle.png'
+            champion = 'sejuani'
+            rota = 'jungle'
+        }
+        else if (estilo == 'suporte' && lane == 'jungle' && campeao == 'passivo' || estilo == 'suporte' && lane == 'jungle' && campeao == 'agressivo') {
+            formulario__conteudo.style.display = 'none'
+            personagem__conteudo.style.display = 'block'
+            imagem__personagem.src = 'img/Ivern_0.jpg'
+            campeao__nome.innerHTML = `IVERN: O PAI DO VERDE`
+            campeao__lane.innerHTML = `JUNGLE`
+            lane__icone.src = 'img/icon-position-jungle.png'
+            champion = 'ivern'
+            rota = 'jungle'
+        }
+
+        else {
+            erro_selecao.style.display = 'block'
+        }
+
+        
+    }
+</script>
