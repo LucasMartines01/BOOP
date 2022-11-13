@@ -7,13 +7,13 @@ body {
     grid-template-columns: 28% 72%;
     font-family: 'Lato', sans-serif;
     color: #FFFFFF;
-    height: 100vh
+    height: 100vh;
 }
 
 .menu__lateral {
     background-color: #000000;
     display: flex;
-    height: 700px;
+    height: 100%;
     flex-direction: column;
     align-items: center;
 
@@ -84,7 +84,7 @@ a:hover {
 }
 
 .conteudo__principal {
-    height: 700px;
+    height: 100%;
     background-color: #0f1519;
     /* background-color: #000; */
 }
