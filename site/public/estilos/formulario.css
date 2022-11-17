@@ -107,13 +107,6 @@
     height: 50px;
 }
 
-.personagem__voltar {
-    text-decoration: none;
-    color: #FFFFFF;
-    background-color: #00c8c8;
-    font-family: 'Lato', sans-serif;
-    cursor: pointer;
-}
 
 .erro__resposta {
     display: none;
