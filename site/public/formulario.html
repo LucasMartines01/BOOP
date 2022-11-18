@@ -77,7 +77,7 @@
         <div class="card__personagem">
             <p id="nomePersonagem"></p>
             <p id="lanePersonagem"></p>
-            <p id="'funcaoPersonagem"></p>
+            <p id="funcaoPersonagem"></p>
             <img src="" alt="icone lane" id="imagemLane">
             <button class="voltar" onclick="voltar()">Voltar</button>
         </div>
@@ -107,7 +107,6 @@
         var teamfightVar = sel_fight.value
         var laneVar = sel_lane.value
         var champion = ''
-        var lane = ''
 
         if (estiloVar == 'agressivo' && teamfightVar == 'assassino' && laneVar == 'midlane') {
             formulario.style.display = 'none'
@@ -208,7 +207,7 @@
             funcaoPersonagem.innerHTML = 'FUNÇÃO: MAGO'
             imagemLane.src = 'img/Bottom_icon.webp'
             imagemPersonagem.src = ''
-            champion = 'SERAPHINE'
+            champion = 'Seraphine'
         }
         else {
             div_aguardar.style.display = 'none'
