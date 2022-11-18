@@ -6,173 +6,110 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOOP | Formulário</title>
-    <link rel="stylesheet" href="estilos/index_geral.css">
-    <link rel="stylesheet" href="estilos/formulario.css">
+    <link rel="stylesheet" href="estilos/noticias.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="../js/funcoes.js"></script>
-    <!-- <script src="js/form.js"></script> -->
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel="stylesheet" href="estilos/formulario.css">
 </head>
 
 <body>
-    <div class="geral__form">
-        <div class="menu__lateral">
-            <h1>BOOP</h1>
-            <div class="ola">
-                <img src="img/loginuser.png" alt="" width="50px" height="50px">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+    <div class="header">
+        <h1>BOOP</h1>
+        <div class="navbar">
+            <a href="noticias.html">Notícias</a>
+            <a href="">Quiz</a>
+            <a href="" id="aqui">Formulário</a>
+            <a href="">Ranking</a>
+        </div>
+        <div class="usuario">
+            <img src="img/loginuser.png" alt="" width="50px" height="50px">
+            <span id="b_usuario">usuário</span>
+            <button><i class="fi fi-rs-angle-small-down"></i></button>
+        </div>
+    </div>
+    <div class="conteudo__formulario">
+        <div class="card__formulario">
+            <div class="card__inputs">
+                <h3>Selecione seu estilo de jogo</h3>
+                <select id="sel_estilo" class="select">
+                    <option value="">Escolha uma opção</option>
+                    <option value="agressivo">Agressivo</option>
+                    <option value="">Passivo</option>
+                </select>
+                <h3>Em uma luta você seria a pessoa que:</h3>
+                <select id="sel_fight" class="select">
+                    <option value="">Escolha uma opção</option>
+                    <option value="frontline">Ficaria na linha de frente</option>
+                    <option value="distancia">Manteria o posicionamento longe dos inimigos</option>
+                    <option value="assassino">Mataria um alvo específico</option>
+                    <option value="buffer">Concederia buffs aos colegas de time</option>
+                </select>
+                <h3>No decorrer do game você gostaria de:</h3>
+                <select id="sel_lane" class="select">
+                    <option value="">Escolha uma opção</option>
+                    <option value="jungle">Focar nos objetivos neutros</option>
+                    <option value="botlane">Jogar com alguém ao lado te auxiliando</option>
+                    <option value="midlane">Jogar em rota solo focando em soltar magias</option>
+                    <option value="toplane">Jogar em rota solo focando em se fortalecer</option>
+                </select>
+                <button class="card__inputs--botao" onclick="responder()">Responder</button>
+                <div class="carregamento" id="div_aguardar">
+                    <img src="img/circle-loading.gif" alt="">
+                </div>
             </div>
-            <div class="menu__lateral--botoes">
-                <a href="noticias.html">Noticias</a>
-                <a href="formulario.html" class="aqui">Formulário</a>
-                <a href="#">Quiz</a>
-                <button class="menu__lateral--deslogar" onclick="limparSessao()">Sair</button>
+            <div class="imagem__formulario">
+                <img src="img/arcane-1.webp" alt="imagem sion">
             </div>
         </div>
-
-        <div class="conteudo__formulario">
-            <div class="formulario" id="formulario__conteudo">
-                <div class="formulario__texto">
-                    <h2>Formulário</h2>
-                    <p>Como acredita que se encaixaria melhor:</p>
-                    <select id="sel_estilo" class="select__form">
-                        <option value="0">--Selecione uma opção--</option>
-                        <option value="dano">Causando dano</option>
-                        <option value="tank">Tankando</option>
-                        <option value="suporte">Dando suporte ao time</option>
-                    </select>
-                    <p>Em uma luta qual seria sua atitude:</p>
-                    <select id="sel_lane" class="select__form">
-                        <option value="">--Selecione uma opção--</option>
-                        <option value="assassino">Buscando explodir um alvo especifico</option>
-                        <option value="adc">Matendo o posicionamento e causando dano</option>
-                        <option value="frontline">Fazendo a linha de frente e segurando o dano</option>
-                        <option value="buffer">Buffando os parceiros do time</option>
-                        <option value="split">Jogando nas rotas laterais levando objetivos</option>
-                        <option value="jungle">Matando monstros e fazendo objetivos neutros</option>
-                    </select>
-                    <p>Durante os primeiros minutos de game você seria o player que:</p>
-                    <select id="sel_campeao" class="select__form">
-                        <option value="">--Selecione uma opção--</option>
-                        <option value="agressivo">Jogaria agressivo pra cima do adversário</option>
-                        <option value="passivo">Jogaria passivo pretende jogar com calma</option>
-                    </select>
-                    <div class="erro__resposta" id="erro_selecao">Selecione as opções de maneira coerente!</div>
-                    <button class="formulario__button" onclick="responder()">Responder</button>
-                </div>
-            </div>
-            <div class="card__personagem" id="personagem__conteudo">
-                <img src="" alt="" class="card__imagem" id="imagem__personagem">
-                <h2 class="nome__campeao" id="campeao__nome"></h2>
-                <div class="card__lane">
-                    <p id="campeao__lane"></p>
-                    <img src="" alt="icone lane" class="icon__lane" id="lane__icone">
-                </div>
-            </div>
+    </div>
+    <div class="conteudo__personagem">
+        <div class="card__personagem">
+            <p id="nomePersonagem"></p>
+            <p id="lanePersonagem"></p>
+            <p id="funcaoPersonagem"></p>
+            <img src="" alt="icone mid" id="imagemLane">
+            <button class="voltar" onclick="voltar()">Voltar</button>
+        </div>
+        <div class="imagem__personagem">
+            <img src="" alt="" id="imagemPersonagem">
         </div>
     </div>
 </body>
 
 </html>
+
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
+    const formulario = document.querySelector('.card__formulario')
+    const perso = document.querySelector('.conteudo__personagem')
+
+
     function responder() {
-        var estilo = sel_estilo.value
-        var lane = sel_lane.value
-        var campeao = sel_campeao.value
-        var champion = ''
-        var rota = ''
-        if (estilo == 'dano' && lane == 'assassino' && campeao == 'agressivo') {
-            formulario__conteudo.style.display = 'none'
-            personagem__conteudo.style.display = 'block'
-            imagem__personagem.src = 'img/RiotX_ChampionList_zed.jpg'
-            campeao__nome.innerHTML = `ZED: LÂMINA DO TROVÃO`
-            campeao__lane.innerHTML = `MID`
-            lane__icone.src = 'img/Middle_icon.webp'
-            champion = 'zed'
-            rota = 'mid'
-        }
+        div_aguardar.style.display = 'block'
+        setTimeout(function () {
+            personagem();
+        }, 1000);
+    }
+    function personagem() {
+        var estiloVar = sel_estilo.value
+        var teamfightVar = sel_fight.value
+        var laneVar = sel_lane.value
 
-        else if (estilo == 'dano' && lane == 'assassino' && campeao == 'passivo') {
-            formulario__conteudo.style.display = 'none'
-            personagem__conteudo.style.display = 'block'
-            imagem__personagem.src = 'img/Leblanc_19.jpg'
-            campeao__nome.innerHTML = `LEBLANC: A FARSANTE`
-            campeao__lane.innerHTML = `MID`
-            lane__icone.src = 'img/Middle_icon.webp'
-            champion = 'leblanc'
-            rota = 'mid'
+        if (estiloVar == 'agressivo' && teamfightVar == 'assassino' && laneVar == 'midlane') {
+            formulario.style.display = 'none'
+            perso.style.display = 'grid'
+            nomePersonagem.innerHTML = 'ZED: A LÂMINA DO TROVÃO'
+            lanePersonagem.innerHTML = 'LANE: MID'
+            funcaoPersonagem.innerHTML = 'FUNÇÃO: ASSASSINO'
+            imagemLane.src = 'img/Middle_icon.webp'
+            imagemPersonagem.src = 'img/RiotX_ChampionList_zed.jpg'
         }
-
-        else if (estilo == 'dano' && lane == 'adc' && campeao == 'passivo' || estilo == 'dano' && lane == 'adc' && campeao == 'agressivo') {
-            formulario__conteudo.style.display = 'none'
-            personagem__conteudo.style.display = 'block'
-            imagem__personagem.src = 'img/Ezreal_25.jpg'
-            campeao__nome.innerHTML = `EZREAL: O EXPLORADOR PRÓDIGO`
-            campeao__lane.innerHTML = `ADC`
-            lane__icone.src = 'img/Bottom_icon.webp'
-            champion = 'ezreal'
-            rota = 'adc'
-        }
-        else if (estilo == 'dano' && lane == 'split' && campeao == 'passivo' || estilo == 'dano' && lane == 'split' && campeao == 'agressivo') {
-            formulario__conteudo.style.display = 'none'
-            personagem__conteudo.style.display = 'block'
-            imagem__personagem.src = 'img/Jax_1.jpg'
-            campeao__nome.innerHTML = `JAX: O GRÃO-MESTRE DAS ARMAS`
-            campeao__lane.innerHTML = `TOP`
-            lane__icone.src = 'img/Top_icon.png'
-            champion = 'jax'
-            rota = 'top'
-        }
-        else if (estilo == 'dano' && lane == 'jungle' && campeao == 'passivo' || estilo == 'dano' && lane == 'jungle' && campeao == 'agressivo') {
-            formulario__conteudo.style.display = 'none'
-            personagem__conteudo.style.display = 'block'
-            imagem__personagem.src = 'img/LeeSin_31.jpg'
-            campeao__nome.innerHTML = `LEE SIN: O MONGE CEGO`
-            campeao__lane.innerHTML = `JUNGLE`
-            lane__icone.src = 'img/icon-position-jungle.png'
-            champion = 'lee sin'
-            lane = 'jungle'
-        }
-        else if (estilo == 'tank' && lane == 'frontline' && campeao == 'passivo' || estilo == 'tank' && lane == 'frontline' && campeao == 'agressivo') {
-            formulario__conteudo.style.display = 'none'
-            personagem__conteudo.style.display = 'block'
-            imagem__personagem.src = 'img/sion.jpg'
-            campeao__nome.innerHTML = `SION: COLOSSO MORTO-VIVO`
-            campeao__lane.innerHTML = `TOP`
-            lane__icone.src = 'img/Top_icon.png'
-            champion = 'sion'
-            rota = 'top'
-        }
-        else if (estilo == 'tank' && lane == 'jungle' && campeao == 'passivo' || estilo == 'tank' && lane == 'jungle' && campeao == 'agressivo') {
-            formulario__conteudo.style.display = 'none'
-            personagem__conteudo.style.display = 'block'
-            imagem__personagem.src = 'img/Sejuani_0.jpg'
-            campeao__nome.innerHTML = `SEJUANI: A FÚRIA DO NORTE`
-            campeao__lane.innerHTML = `JUNGLE`
-            lane__icone.src = 'img/icon-position-jungle.png'
-            champion = 'sejuani'
-            rota = 'jungle'
-        }
-        else if (estilo == 'suporte' && lane == 'jungle' && campeao == 'passivo' || estilo == 'suporte' && lane == 'jungle' && campeao == 'agressivo') {
-            formulario__conteudo.style.display = 'none'
-            personagem__conteudo.style.display = 'block'
-            imagem__personagem.src = 'img/Ivern_0.jpg'
-            campeao__nome.innerHTML = `IVERN: O PAI DO VERDE`
-            campeao__lane.innerHTML = `JUNGLE`
-            lane__icone.src = 'img/icon-position-jungle.png'
-            champion = 'ivern'
-            rota = 'jungle'
-        }
-
-        else {
-            erro_selecao.style.display = 'block'
-        }
-
-        
+    }
+    function voltar(){
+             window.location = "formulario.html";
     }
 </script>
