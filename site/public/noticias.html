@@ -10,8 +10,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
-        <script src="js/funcoes.js"></script>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <script src="js/funcoes.js"></script>
+    <script src="js/noticias.js"></script>
 </head>
 
 <body>
@@ -27,7 +29,10 @@
             <div class="usuario">
                 <img src="img/loginuser.png" alt="" width="50px" height="50px">
                 <span id="b_usuario">usuário</span>
-                <button><i class="fi fi-rs-angle-small-down"></i></button>
+                <button onclick="menu()" class="botao--menu"><i class="fi fi-rs-angle-small-down"></i></button>
+                <div class="sair--inativo">
+                    <p onclick="limparSessao()">Sair</p>
+                </div>
             </div>
         </div>
         <div class="conteudo__principal">
@@ -65,5 +70,5 @@
 </html>
 
 <script>
-        b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 </script>
