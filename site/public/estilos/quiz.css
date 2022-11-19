@@ -4,20 +4,35 @@
     background-repeat: no-repeat;
     /* background-position: center; */
 }
-
+.iniciarQuiz{
+    text-align: center;
+}
 .titulo--quiz {
     text-align: center;
     font-family: 'Anton', sans-serif;
-    margin-top: 3em;
+    font-size: 40px;
+}
+
+.iniciar {
+    width: 300px;
+    height: 50px;
+    border: none;
+    margin-top: 2em;
+    align-self: center;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    border-radius: 50px;
+    background-color: #000000;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 20px;
 }
 
 .quiz {
     width: 700px;
     height: 600px;
-    margin: auto;
-    /* background-image: linear-gradient(white, black); */
+    margin: 3em auto;
     background-color: #c4c4c4;
-    /* background-color: #FFFFFF; */
     font-family: 'Lato', sans-serif;
     border-radius: 100px;
     color: #000000;
@@ -28,11 +43,10 @@
 
 .conteudoQuiz {
     text-align: center;
-    display: flex;
     flex-direction: column;
     text-align: center;
     text-transform: uppercase;
-
+    display: none;
 }
 
 .conteudoQuiz h3 {
