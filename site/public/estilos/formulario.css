@@ -4,6 +4,9 @@
     width: 100vw;
     display: flex;
 }
+.backgroundform{
+    background-color: #000000;
+}
 .card__formulario {
     width: 99%;
     height: 50%;

@@ -17,72 +17,76 @@
 </head>
 
 <body>
-    <div class="header">
-        <h1>BOOP</h1>
-        <div class="navbar">
-            <a href="noticias.html">Notícias</a>
-            <a href="quiz.html">Quiz</a>
-            <a href="formulario.html" id="aqui">Formulário</a>
-            <a href="">Ranking</a>
-        </div>
-        <div class="usuario">
-            <img src="img/loginuser.png" alt="" width="50px" height="50px">
-            <span id="b_usuario">usuário</span>
-            <button onclick="menu()" class="botao--menu"><i class="fi fi-rs-angle-small-down"></i></button>
-            <div class="sair--inativo">
-                <p onclick="limparSessao()">Sair</p>
+    <div class="backgroundform">
+
+
+        <div class="header">
+            <h1>BOOP</h1>
+            <div class="navbar">
+                <a href="noticias.html">Notícias</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="formulario.html" id="aqui">Formulário</a>
+                <a href="">Ranking</a>
             </div>
-        </div>
-    </div>
-    <div class="conteudo__formulario">
-        <div class="card__formulario">
-            <div class="card__inputs">
-                <h3>Selecione seu estilo de jogo</h3>
-                <select id="sel_estilo" class="select">
-                    <option value="">Escolha uma opção</option>
-                    <option value="agressivo">Agressivo</option>
-                    <option value="passivo">Passivo</option>
-                </select>
-                <h3>Em uma luta você seria a pessoa que:</h3>
-                <select id="sel_fight" class="select">
-                    <option value="">Escolha uma opção</option>
-                    <option value="frontline">Ficaria na linha de frente</option>
-                    <option value="distancia">Manteria o posicionamento longe dos inimigos</option>
-                    <option value="assassino">Mataria um alvo específico</option>
-                    <option value="buffer">Concederia buffs aos colegas de time</option>
-                </select>
-                <h3>No decorrer do game você gostaria de:</h3>
-                <select id="sel_lane" class="select">
-                    <option value="">Escolha uma opção</option>
-                    <option value="jungle">Focar nos objetivos neutros</option>
-                    <option value="botlane">Jogar com alguém ao lado te auxiliando</option>
-                    <option value="midlane">Jogar em rota solo focando em soltar magias</option>
-                    <option value="toplane">Jogar em rota solo focando em se fortalecer</option>
-                </select>
-                <div id="erro_escolha">
-                    <p>Escolha uma opção coerente!</p>
-                </div>
-                <button class="card__inputs--botao" onclick="responder()">Responder</button>
-              
-                <div class="carregamento" id="div_aguardar">
-                    <img src="https://i.pinimg.com/originals/ea/7f/61/ea7f61e8e71932cbd0f88007a9c83acb.gif" alt="">
+            <div class="usuario">
+                <img src="img/loginuser.png" alt="" width="50px" height="50px">
+                <span id="b_usuario">usuário</span>
+                <button onclick="menu()" class="botao--menu"><i class="fi fi-rs-angle-small-down"></i></button>
+                <div class="sair--inativo">
+                    <p onclick="limparSessao()">Sair</p>
                 </div>
             </div>
-            <div class="imagem__formulario">
-                <img src="img/arcane-1.webp" alt="imagem sion">
+        </div>
+        <div class="conteudo__formulario">
+            <div class="card__formulario">
+                <div class="card__inputs">
+                    <h3>Selecione seu estilo de jogo</h3>
+                    <select id="sel_estilo" class="select">
+                        <option value="">Escolha uma opção</option>
+                        <option value="agressivo">Agressivo</option>
+                        <option value="passivo">Passivo</option>
+                    </select>
+                    <h3>Em uma luta você seria a pessoa que:</h3>
+                    <select id="sel_fight" class="select">
+                        <option value="">Escolha uma opção</option>
+                        <option value="frontline">Ficaria na linha de frente</option>
+                        <option value="distancia">Manteria o posicionamento longe dos inimigos</option>
+                        <option value="assassino">Mataria um alvo específico</option>
+                        <option value="buffer">Concederia buffs aos colegas de time</option>
+                    </select>
+                    <h3>No decorrer do game você gostaria de:</h3>
+                    <select id="sel_lane" class="select">
+                        <option value="">Escolha uma opção</option>
+                        <option value="jungle">Focar nos objetivos neutros</option>
+                        <option value="botlane">Jogar com alguém ao lado te auxiliando</option>
+                        <option value="midlane">Jogar em rota solo focando em soltar magias</option>
+                        <option value="toplane">Jogar em rota solo focando em se fortalecer</option>
+                    </select>
+                    <div id="erro_escolha">
+                        <p>Escolha uma opção coerente!</p>
+                    </div>
+                    <button class="card__inputs--botao" onclick="responder()">Responder</button>
+
+                    <div class="carregamento" id="div_aguardar">
+                        <img src="https://i.pinimg.com/originals/ea/7f/61/ea7f61e8e71932cbd0f88007a9c83acb.gif" alt="">
+                    </div>
+                </div>
+                <div class="imagem__formulario">
+                    <img src="img/arcane-1.webp" alt="imagem sion">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="conteudo__personagem">
-        <div class="card__personagem">
-            <p id="nomePersonagem"></p>
-            <p id="lanePersonagem"></p>
-            <p id="funcaoPersonagem"></p>
-            <img src="" alt="icone lane" id="imagemLane">
-            <button class="voltar" onclick="voltar()">Voltar</button>
-        </div>
-        <div class="imagem__personagem">
-            <img src="" alt="" id="imagemPersonagem">
+        <div class="conteudo__personagem">
+            <div class="card__personagem">
+                <p id="nomePersonagem"></p>
+                <p id="lanePersonagem"></p>
+                <p id="funcaoPersonagem"></p>
+                <img src="" alt="icone lane" id="imagemLane">
+                <button class="voltar" onclick="voltar()">Voltar</button>
+            </div>
+            <div class="imagem__personagem">
+                <img src="" alt="" id="imagemPersonagem">
+            </div>
         </div>
     </div>
 </body>
@@ -213,10 +217,10 @@
             div_aguardar.style.display = 'none'
             erro_escolha.style.display = 'block'
         }
-        
+
     }
-    function voltar(){
-             window.location = "formulario.html";
+    function voltar() {
+        window.location = "formulario.html";
     }
 </script>
 <script src="js/noticias.js"></script>
