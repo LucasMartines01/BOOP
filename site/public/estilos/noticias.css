@@ -5,7 +5,11 @@ body {
     color: #FFFFFF;
     overflow-x: hidden;
 }
-
+.conteudo {
+    background-image: url('../img/league-of-legends-arcane-phase-3-1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 .header {
     display: flex;
