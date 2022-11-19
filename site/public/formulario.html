@@ -21,8 +21,8 @@
         <h1>BOOP</h1>
         <div class="navbar">
             <a href="noticias.html">Notícias</a>
-            <a href="">Quiz</a>
-            <a href="" id="aqui">Formulário</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="formulario.html" id="aqui">Formulário</a>
             <a href="">Ranking</a>
         </div>
         <div class="usuario">
@@ -92,7 +92,7 @@
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-    const formulario = document.querySelector('.card__formulario')
+    const formulario = document.querySelector('.conteudo__formulario')
     const perso = document.querySelector('.conteudo__personagem')
 
 
@@ -135,7 +135,7 @@
             lanePersonagem.innerHTML = 'LANE: JUNGLE'
             funcaoPersonagem.innerHTML = 'FUNÇÃO: ASSASSINO'
             imagemLane.src = 'img/icon-position-jungle.png'
-            imagemPersonagem.src = ''
+            imagemPersonagem.src = 'img/Khazix_4.jpg'
             champion = 'Kha Zix'
         }
         else if (estiloVar == 'passivo' && teamfightVar == 'frontline' && laneVar == 'jungle' || estiloVar == 'agressivo' && teamfightVar == 'frontline' && laneVar == 'jungle') {
@@ -166,7 +166,7 @@
             lanePersonagem.innerHTML = 'LANE: SUPORTE'
             funcaoPersonagem.innerHTML = 'FUNÇÃO: SUPORTE'
             imagemLane.src = 'img/Bottom_icon.webp'
-            imagemPersonagem.src = ''
+            imagemPersonagem.src = 'img/Leona_11.jpg'
             champion = 'Leona'
         }
         else if (estiloVar == 'passivo' && teamfightVar == 'distancia' && laneVar == 'botlane' || estiloVar == 'agressivo' && teamfightVar == 'distancia' && laneVar == 'botlane') {
@@ -186,7 +186,7 @@
             lanePersonagem.innerHTML = 'LANE: MID/TOP'
             funcaoPersonagem.innerHTML = 'FUNÇÃO: MAGO'
             imagemLane.src = 'img/Middle_icon.webp'
-            imagemPersonagem.src = ''
+            imagemPersonagem.src = 'img/Ryze_11.jpg'
             champion = 'Ryze'
         }
         else if (estiloVar == 'passivo' && teamfightVar == 'buffer' && laneVar == 'jungle' || estiloVar == 'agressivo' && teamfightVar == 'buffer' && laneVar == 'jungle') {
@@ -206,7 +206,7 @@
             lanePersonagem.innerHTML = 'LANE: SUPORTE/MID'
             funcaoPersonagem.innerHTML = 'FUNÇÃO: MAGO'
             imagemLane.src = 'img/Bottom_icon.webp'
-            imagemPersonagem.src = ''
+            imagemPersonagem.src = 'img/Seraphine.jpg'
             champion = 'Seraphine'
         }
         else {

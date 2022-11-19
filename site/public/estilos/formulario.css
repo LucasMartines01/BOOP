@@ -1,11 +1,14 @@
 .conteudo__formulario{
     text-align: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
 }
 .card__formulario {
     width: 99%;
-    height: 100%;
+    height: 50%;
     background-color: #FFFFFF;
-    margin: 5em auto;
+    margin: auto;
     color: black;
     text-transform: uppercase;
     display: grid;
