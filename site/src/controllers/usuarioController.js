@@ -94,9 +94,73 @@ function cadastrar(req, res) {
     }
 }
 
+function voltar(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var campeao = req.body.championServer;
+    var id = req.body.idServer;
+
+    // Faça as validações dos valores
+    if (campeao == undefined) {
+        res.status(400).send("Seu campeão está undefined!");
+    } else if (id == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    }  else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.voltar(campeao, id)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro de campeão e id! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function finalizar(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var pontos = req.body.pontosServer;
+    var id = req.body.idServer;
+
+    // Faça as validações dos valores
+    if (pontos == undefined) {
+        res.status(400).send("Seus pontos está undefined!");
+    } else if (id == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    }  else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.finalizar(pontos, id)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro de campeão e id! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     entrar,
+    voltar,
     cadastrar,
+    finalizar,
     listar,
     testar
 }

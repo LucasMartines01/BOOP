@@ -98,6 +98,8 @@
 
     const formulario = document.querySelector('.conteudo__formulario')
     const perso = document.querySelector('.conteudo__personagem')
+    var idUser = sessionStorage.ID_USUARIO
+    var champion = ''
 
 
     function responder() {
@@ -110,7 +112,6 @@
         var estiloVar = sel_estilo.value
         var teamfightVar = sel_fight.value
         var laneVar = sel_lane.value
-        var champion = ''
 
         if (estiloVar == 'agressivo' && teamfightVar == 'assassino' && laneVar == 'midlane') {
             formulario.style.display = 'none'
@@ -220,6 +221,18 @@
 
     }
     function voltar() {
+        fetch("/usuarios/voltar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                championServer: champion,
+                idServer: idUser
+            })
+        });
         window.location = "formulario.html";
     }
 </script>

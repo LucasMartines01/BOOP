@@ -1,4 +1,5 @@
 b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+var idUser = sessionStorage.ID_USUARIO
 
 var contador = 0
 var pontos = 0
@@ -195,5 +196,15 @@ function finalizarQuiz() {
 }
 
 function finalizar() {
+    fetch("/usuarios/finalizar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            pontosServer: pontos,
+            idServer: idUser
+        })
+    });
     window.location = 'quiz.html'
 }
