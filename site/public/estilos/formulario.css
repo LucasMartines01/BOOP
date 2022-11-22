@@ -6,11 +6,12 @@
 }
 .backgroundform{
     background-color: #000000;
+    height: 100%;
       /* background-image: url('../img/Background_Quiz.jpg'); */
 }
 .card__formulario {
     width: 99%;
-    height: 50%;
+    height: 450px;
     background-color: #FFFFFF;
     margin: auto;
     color: black;
