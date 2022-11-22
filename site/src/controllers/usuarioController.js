@@ -147,7 +147,7 @@ function finalizar(req, res) {
                 function (erro) {
                     console.log(erro);
                     console.log(
-                        "\nHouve um erro ao realizar o cadastro de campeão e id! Erro: ",
+                        "\nHouve um erro ao realizar a inserção dos pontos! Erro: ",
                         erro.sqlMessage
                     );
                     res.status(500).json(erro.sqlMessage);
