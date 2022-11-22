@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos/noticias.css">
+    <link rel="stylesheet" href="estilos/ranking.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <script src="js/funcoes.js"></script>
+    <script src="js/noticias.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>BOOP</h1>
+        <div class="navbar">
+            <a href="noticias.html">Notícias</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="formulario.html">Formulário</a>
+            <a href="ranking.html" id="aqui">Ranking</a>
+        </div>
+        <div class="usuario">
+            <img src="img/loginuser.png" alt="" width="50px" height="50px">
+            <span id="b_usuario">usuário</span>
+            <button onclick="menu()" class="botao--menu"><i class="fi fi-rs-angle-small-down"></i></button>
+            <div class="sair--inativo">
+                <p onclick="limparSessao()">Sair</p>
+            </div>
+        </div>
+    </div>
+    <div class="background__ranking">
+        <div class="conteudo__ranking">
+            <div class="ranking">
+                <h1>Ranking Quiz</h1>
+                <div class="players">
+                    <p id="1">1ª</p>
+                    <p id="nome1">Lucas Silva</p>
+                    <p id="nota1">Nota:</p>
+                </div>
+                <div class="players">
+                    <p id="2">2ª</p>
+                    <p id="nome2">Lucas Silva</p>
+                    <p id="nota2">Nota:</p>
+                </div>
+                <div class="players">
+                    <p id="3">3ª</p>
+                    <p id="nome3">Lucas Silva</p>
+                    <p id="nota3">Nota:</p>
+                </div>
+                <div class="players">
+                    <p id="4">4ª</p>
+                    <p id="nome4">Lucas Silva</p>
+                    <p id="nota4">Nota:</p>
+                </div>
+                <div class="players">
+                    <p id="5">5ª</p>
+                    <p id="nome5">Lucas Silva</p>
+                    <p id="nota5">Nota:</p>
+                </div>
+                <div class="players">
+                    <p id="6">6ª</p>
+                    <p id="nome6">Lucas Silva</p>
+                    <p id="nota6">Nota:</p>
+                </div>
+                <div class="players">
+                    <p id="7">7ª</p>
+                    <p id="nome7">Lucas Silva</p>
+                    <p id="nota7">Nota:</p>
+                </div>
+                <div class="players">
+                    <p id="8">8ª</p>
+                    <p id="nome8">Lucas Silva</p>
+                    <p id="nota8">Nota:</p>
+                </div>
+                <div class="players">
+                    <p id="9">9ª</p>
+                    <p id="nome9">Lucas Silva</p>
+                    <p id="nota9">Nota:</p>
+                </div>
+                <div class="players">
+                    <p id="nota10">10ª</p>
+                    <p id="nome10">Lucas Silva</p>
+                    <p id="nota10">Nota:</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

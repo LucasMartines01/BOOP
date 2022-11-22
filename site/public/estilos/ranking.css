@@ -1,0 +1,37 @@
+.background__ranking {
+    background-image: url('../img/Background_Quiz.jpg');
+    height: 100vh;
+}
+
+.conteudo__ranking {
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    justify-items: center;
+}
+
+.ranking {
+    width: 600px;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: 2;
+    border-radius: 50px;
+    text-transform: uppercase;
+}
+
+.players {
+    display: flex;
+    margin: 1em 0;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border-radius: 50px;
+}
+
+.players p {
+    margin: 0 1em;
+    font-size: 24px;
+}
