@@ -71,6 +71,33 @@ function atualizar() {
 
     },
     {
+        pergunta: "Eu serei livre",
+        resposta: [{ text: "Nidalee", isCorrect: false },
+        { text: "Ryze", isCorrect: false },
+        { text: "Xerath", isCorrect: true },
+        { text: "Lee sin", isCorrect: false }
+        ]
+
+    },
+    {
+        pergunta: "Alegria! Incessante e eterna",
+        resposta: [{ text: "Nilah", isCorrect: true },
+        { text: "Senna", isCorrect: false },
+        { text: "Seraphine", isCorrect: false },
+        { text: "Akshan", isCorrect: false }
+        ]
+
+    },
+    {
+        pergunta: "Não tem pra ninguem!",
+        resposta: [{ text: "Trundle", isCorrect: false },
+        { text: "Draven", isCorrect: false },
+        { text: "Darius", isCorrect: false },
+        { text: "Sett", isCorrect: true}
+        ]
+
+    },
+    {
         pergunta: "Vão tremer diante da minha perfeição",
         resposta: [{ text: "Ahri", isCorrect: false },
         { text: "Leona", isCorrect: false },
@@ -157,7 +184,7 @@ respondeu.addEventListener("click", () => {
         pontos = pontos
     }
 
-    if (contador < 6) {
+    if (contador < 9) {
         contador++
         atualizar();
     }
@@ -192,7 +219,7 @@ function finalizarQuiz() {
         botao__finalizar.style.backgroundColor = '#FFFFFF'
         botao__finalizar.style.color = '#000000'
     }
-    notaFinal.innerHTML = `Você acertou: ${pontos} de 7!`
+    notaFinal.innerHTML = `Você acertou: ${pontos} de 10!`
 }
 
 function finalizar() {
