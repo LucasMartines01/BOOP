@@ -5,7 +5,7 @@ _Projeto Individual do Primeiro Semestre  da faculade São Paulo Tech School_
 
 <hr>
 
-# Como usar
+
 
 - Projeto individual desenvolvido durante o primeiro semestre do curso de ADS na faculdade São Paulo Tech School.
 
