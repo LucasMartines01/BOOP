@@ -39,7 +39,7 @@
         <div class="conteudo__ranking">
             <div class="card__metricas">
                 <p>Quantidade de quiz respondidos</p>
-                <p id="qtd_quiz">30</p>
+                <p id="qtd_quiz"></p>
             </div>
             <div class="card__metricas1">
                 <p>Maior nota</p>
@@ -55,35 +55,91 @@
             </div>
             <div class="ranking">
                 <h1>Ranking Quiz</h1>
-                <div class="players">
-                    <p id="1">1ª</p>
-                    <p id="nome1">Lucas Silva</p>
-                    <p id="nota1">Nota:</p>
-                </div>
-                <div class="players">
-                    <p id="2">2ª</p>
-                    <p id="nome2">Lucas Silva</p>
-                    <p id="nota2">Nota:</p>
-                </div>
-                <div class="players">
-                    <p id="3">3ª</p>
-                    <p id="nome3">Lucas Silva</p>
-                    <p id="nota3">Nota:</p>
-                </div>
-                <div class="players">
-                    <p id="4">4ª</p>
-                    <p id="nome4">Lucas Silva</p>
-                    <p id="nota4">Nota:</p>
-                </div>
-                <div class="players">
-                    <p id="5">5ª</p>
-                    <p id="nome5">Lucas Silva</p>
-                    <p id="nota5">Nota:</p>
-                </div>
-
             </div>
         </div>
     </div>
 </body>
 
 </html>
+
+<script>
+    atualizarCards();
+    atualizarRanking();
+
+    function atualizarCards() {
+        fetch("/avisos/listar").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+                        var contagem = publicacao.contagem
+                        var maiorNota = publicacao.notaMaxima
+                        var menorNota = publicacao.menorNota
+                        var mediaNota = publicacao.media
+                        qtd_quiz.innerHTML = `${contagem}`
+                        maior_nota.innerHTML = `${maiorNota}`
+                        menor_nota.innerHTML = `${menorNota}`
+                        media.innerHTML = `${mediaNota}`
+                    }
+
+                  
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
+    }
+
+    function atualizarRanking() {
+        fetch("/avisos/ranquear").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+                        var nomeUsuario =  resposta[0].nome
+
+                        var rankingGeral = document.querySelector('.ranking')
+                        var divPlayers = document.createElement("div");
+                        var posicaoRanking = document.createElement("p");
+                        var nomePlayer = document.createElement("p");
+                        var notaPlayer = document.createElement("p");
+                        
+                        divPlayers.className = "players";
+                        posicaoRanking.className = "rank"
+                        nomePlayer.className = "nome"
+                        notaPlayer.className = "notaPlayer"
+
+                        rankingGeral.appendChild(divPlayers);
+                        divPlayers.appendChild(posicaoRanking);
+                        divPlayers.appendChild(nomePlayer);
+                        divPlayers.appendChild(notaPlayer);
+                        
+                        posicaoRanking.innerHTML = `${i+1}ª`
+                        nomePlayer.innerHTML = `${publicacao.nome}`
+                        notaPlayer.innerHTML = `Nota: ${publicacao.nota}`
+                    }
+
+                  
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
+    }
+</script>

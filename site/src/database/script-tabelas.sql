@@ -22,7 +22,10 @@ idQuiz int primary key auto_increment,
 fkUsuario int, foreign key (fkusuario) references usuario(id),
 nota int);
 
-
 select * from formulario;
 
 select * from quiz;
+
+select count(idQuiz), max(nota), round(avg(nota),0), min(nota) from quiz;
+
+select usuario.nome, quiz.nota from usuario join quiz on fkUsuario = id  group by quiz.nota order by nota desc limit 5;

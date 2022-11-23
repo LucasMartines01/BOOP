@@ -28,12 +28,26 @@
 }
 
 .players {
-    display: flex;
+    display: grid;
     margin: 1em 0;
     background-color: #000000;
     color: rgb(255, 255, 255);
     border-radius: 50px;
+    width: 420px;
+    grid-template-columns: 60px 200px 150px;
+    justify-items: center;
 }
+.rank {
+    grid-column: 1;
+}
+
+.nome {
+    grid-column: 2;
+}
+.notaPlayer{
+    grid-column: 3;
+}
+
 
 .players p {
     margin: 0 1em;
