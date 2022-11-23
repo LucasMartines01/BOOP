@@ -208,3 +208,4 @@ function finalizar() {
     });
     window.location = 'quiz.html'
 }
+

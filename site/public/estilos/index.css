@@ -46,9 +46,9 @@ body {
 .cabecalho__botoes a {
     padding: 5px 10px;
     border-radius: 10px;
-    background-color: #0BC4E2;
+    background-color: #FFFFFF;
     font-size: 16px;
-    color: #FFFFFF;
+    color: #000000;
     text-decoration: none;
     text-transform: uppercase;
 }
