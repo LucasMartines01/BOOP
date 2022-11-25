@@ -26,7 +26,22 @@
   flex-direction: column;
   justify-content: center;
 }
-
+#erro{
+  color: red;
+  display: none;
+}
+#erro1{
+  color: red;
+  display: none;
+}
+#erro2{
+  color: red;
+  display: none;
+}
+#erro3{
+  color: red;
+  display: none;
+}
 .inputs__cadastro span {
   font-size: 32px;
   text-transform: uppercase;

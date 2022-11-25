@@ -19,7 +19,7 @@
         <div class="header">
             <a href="index.html"><h1>BOOP</h1></a>
             <div class="cabecalho__botoes">
-                <a href="#">Cadastrar</a>
+                <a href="cadastro.html">Cadastrar</a>
                 <a href="login.html">Iniciar sessão</a>
             </div>
         </div>
@@ -37,11 +37,14 @@
                 <div class="item__cadastro">
                     <span>Usuário</span>
                     <input type="text" id="ipt_usuario" placeholder="Nome de usuário" required>
+                    <p id="erro">Nome de usuário deve ter apenas 10 caracteres</p>
                 </div>
 
                 <div class="item__cadastro">
                     <span>E-mail</span>
                     <input type="email" id="ipt_email" placeholder="dirken@exemplo.com" required>
+                    <p id="erro1">' @ ' não encontrado</p>
+                    <p id="erro2">' . ' não encontrado</p>
                 </div>
 
                 <div class="item__cadastro">
@@ -51,6 +54,7 @@
                 <div class="item__cadastro">
                     <span>Confirmação</span>
                     <input type="password" id="ipt_confirmacao" placeholder="******" required>
+                    <p id="erro3">Senhas divergentes!</p>
                 </div>
             </div>
 
@@ -76,17 +80,20 @@
 <script>
     function cadastrar() {
         aguardar();
+        
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var nomeVar = ipt_usuario.value;
         var emailVar = ipt_email.value;
         var senhaVar = ipt_senha.value;
         var confirmacaoSenhaVar = ipt_confirmacao.value;
+        var indexArroba = emailVar.indexOf('@')
+        var indexPonto = emailVar.indexOf('.')
 
-        if (nomeVar == "") {
+        if (nomeVar == "" || ipt_usuario.value.length > 10) {
             ipt_usuario.style.border = "1px solid red"
-            cardErro.style.display = "block"
             mensagem_erro.innerHTML = "Preencha os campos corretamente!";
+            erro.style.display = 'block'
 
             finalizarAguardar();
             return false;
@@ -94,30 +101,39 @@
         }
         if (emailVar == "") {
             ipt_email.style.border = "1px solid red"
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Preencha os campos corretamente!";
-
+            mensagem_erro.innerHTML = "Preencha os campos corretamente!";   
             finalizarAguardar();
             return false;
 
+        }
+        if(indexArroba == -1){
+            erro1.style.display = 'block'
+            finalizarAguardar();
+            return false;
+        }
+        if (indexPonto == -1){
+            erro2.style.display = 'block'
+            finalizarAguardar();
+            return false;
         }
         if (senhaVar == "") {
             ipt_senha.style.border = "1px solid red"
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Preencha os campos corretamente!";
-
             finalizarAguardar();
             return false;
 
         }
-        if (confirmacaoSenhaVar == "" || confirmacaoSenhaVar != senhaVar) {
+        if (confirmacaoSenhaVar == "") {
             ipt_confirmacao.style.border = "1px solid red"
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Preencha os campos corretamente!";
-
             finalizarAguardar();
             return false;
 
+        }
+        if(confirmacaoSenhaVar != senhaVar){
+            ipt_senha.style.border = "1px solid red"
+            ipt_confirmacao.style.border = "1px solid red"
+            erro3.style.display = 'block'
+            finalizarAguardar();
+            return false;
         }
 
         else {
@@ -142,10 +158,6 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                cardErro.style.display = "block";
-
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
                 setTimeout(() => {
                     window.location = "login.html";
                 }, "2000")
